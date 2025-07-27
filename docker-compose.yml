@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  zubbi-dark:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app/frontend
+      - ./backend:/app/backend
+    restart: unless-stopped
+
